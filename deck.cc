@@ -12,7 +12,12 @@ Deck::Deck() {
   "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
   for (int su = 0; su < 4; su++) {
     for (int ra = 0; ra < 13 ; ra++){
-      card_deck.push_back(Card((rank[ra] + "of" + suit[su]), ra + 1));
+      if (ra>9) {
+        card_deck.push_back(Card((rank[ra] + " of " + suit[su]), 10));
+      }
+      else {
+      card_deck.push_back(Card((rank[ra] + " of " + suit[su]), ra + 1));
+    }
     }
   }
 }
@@ -22,10 +27,13 @@ Deck::Deck() {
 // deck.
 Card Deck::Hit() {
   int length = card_deck.size();
-  std::default_random_engine generator;
-  std::uniform_int_distribution<int> distribution(0, length);
-  int card_number = distribution(generator);
-  std::cout<<card_number<<std::endl;
+  // Random number generator initialized with a random device. Uses the Mersenne
+  // twister to generate random numbers (mt19937). Distribution is the range.
+  std::random_device rand_dev;
+  std::mt19937 rng(rand_dev());
+  std::uniform_int_distribution<std::mt19937::result_type> distribution
+  (0, length);
+  int card_number = distribution(rng);
   Card deal_card = card_deck[card_number];
   card_deck.erase(card_deck.begin() + card_number);
   return deal_card;
