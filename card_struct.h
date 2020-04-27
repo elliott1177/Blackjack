@@ -8,3 +8,4 @@ struct Card {
   std::string name;
   int value;
 };
+#endif  // CARD_STRUCT_H_
