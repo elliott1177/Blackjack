@@ -1,12 +1,12 @@
 # Blackjack
 Play the classic game of Blackjack on the command line. C++ is the dealer.
 
-To Run:
-Clone directory to a computer with a g++ compiler
-Open terminal and run commands:
-cd Blackjack
-g++ main.cpp deck.cc player.cc
-./a.out
+# To Run:
+- Clone directory to a computer with a g++ compiler
+- Open terminal and run commands:
+- cd Blackjack
+- g++ main.cpp deck.cc player.cc
+- ./a.out
 
-Notes:
+# Notes:
 Basic functionality down. Will add dealer class next.
