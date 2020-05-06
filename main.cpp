@@ -10,6 +10,7 @@ int main(int argc, char**argv) {
   Deck game_deck;
   std::cout<< "Welcome to the casino!" << std::endl;
   std::cout<< "Your cards are being dealt now" << std::endl;
+  // Change the players into a vector.
   Player player1;
   Player dealer;
   // This integer will keep track of the game being played.
