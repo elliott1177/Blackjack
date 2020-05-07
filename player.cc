@@ -3,7 +3,7 @@
  *
  * @Copyright 2020 Elliott Krohnke, All rights reserved.
  */
-#include "Blackjack/player.h"
+#include "player.h"
 
 // returns 1 if bust
 int Player::Hit(Card dealt) {

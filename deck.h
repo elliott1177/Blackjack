@@ -10,7 +10,7 @@
 #include <vector>
 #include <iostream>
 
-#include "blackjack/card_struct.h"
+#include "card_struct.h"
 
 class Deck {
   std::vector<Card> card_deck;

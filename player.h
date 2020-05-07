@@ -10,7 +10,7 @@
 #include <vector>
 #include <iostream>
 
-#include "Blackjack/card_struct.h"
+#include "card_struct.h"
 
 class Player {
   // score1 tracks the score without any aces, or the low score if you have

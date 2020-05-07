@@ -3,7 +3,7 @@
  *
  * @Copyright 2020 Elliott Krohnke, All rights reserved.
  */
-#include "Blackjack/dealer.h"
+#include "dealer.h"
 
 // Overriden so only one card is printed out.
 void Dealer::Deal(Card c_one, Card c_two) {

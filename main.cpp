@@ -5,10 +5,10 @@
  */
 #include <iostream>
 
-#include "blackjack/deck.h"
-#include "blackjack/card_struct.h"
-#include "blackjack/dealer.h"
-#include "blackjack/player.h"
+#include "deck.h"
+#include "card_struct.h"
+#include "dealer.h"
+#include "player.h"
 
 class Deck;
 

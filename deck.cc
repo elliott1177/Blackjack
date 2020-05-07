@@ -6,7 +6,7 @@
 
 #include <string>
 
-#include "Blackjack/deck.h"
+#include "deck.h"
 
 // Class constructor that fills the card_deck vector with 52 card_struct objects
 // representing a Standard 52-Card Deck. It uses two loops to initialize the

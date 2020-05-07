@@ -6,7 +6,7 @@
 #ifndef BLACKJACK_DEALER_H_
 #define BLACKJACK_DEALER_H_
 
-#include "Blackjack/player.h"
+#include "player.h"
 
 class Dealer : public Player {
  public:
