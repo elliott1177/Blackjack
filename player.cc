@@ -1,15 +1,19 @@
-#include "player.h"
+/**
+ * @file player.cc
+ *
+ * @Copyright 2020 Elliott Krohnke, All rights reserved.
+ */
+#include "Blackjack/player.h"
 
 // returns 1 if bust
 int Player::Hit(Card dealt) {
   hand.push_back(dealt);
-  //std::cout<< "You receive a: " << dealt.name << std::endl;
   int result = Update(dealt);
   return result;
 }
 
 // Call clear because this is a new round. Take two cards then print out stats.
-void Player::Deal(Card c_one, Card c_two){
+void Player::Deal(Card c_one, Card c_two) {
   Clear();
   Hit(c_one);
   Hit(c_two);
@@ -26,7 +30,7 @@ int Player::Update(Card dealt) {
     score1 += dealt.value;
     score2 += dealt.value;
   } else {
-   score1 += dealt.value;
+    score1 += dealt.value;
 }
   // This big bust is a guaranteed loss.
   if (score1 > 21) {
@@ -67,7 +71,7 @@ void Player::PrintCards() {
 // Prints score out according to wether the person has an ace and a non-busted
 // second score. Or just one score they need to keep track of.
 void Player::PrintScore() {
-  if (haveace && score2bust == 0 ) {
+  if (haveace && score2bust == 0) {
     std::cout << " score is either: " << score1 << " or " << score2 << std::
     endl;
   } else if (score1 < 0) {
@@ -79,7 +83,7 @@ void Player::PrintScore() {
 
 // This method prints out the cards that someone has and their score. It is
 // virtual because it may be overriden for different types of players.
-void Player::Print(){
+void Player::Print() {
   std::cout<< "Your cards are: ";
   PrintCards();
   std::cout<< "Your";

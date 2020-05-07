@@ -1,6 +1,12 @@
-#ifndef DEALER_H_
-#define DEALER_H_
-#include "player.h"
+/**
+ * @file dealer.h
+ *
+ * @Copyright 2020 Elliott Krohnke, All rights reserved.
+ */
+#ifndef BLACKJACK_DEALER_H_
+#define BLACKJACK_DEALER_H_
+
+#include "Blackjack/player.h"
 
 class Dealer : public Player {
  public:
@@ -11,4 +17,4 @@ class Dealer : public Player {
   // allowed to know one of the dealers cards.
   void Print() override;
 };
-#endif  // DEALER_H_
+#endif  // BLACKJACK_DEALER_H_

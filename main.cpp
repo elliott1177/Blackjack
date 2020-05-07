@@ -1,9 +1,14 @@
-#include "deck.h"
-#include "card_struct.h"
-#include "dealer.h"
-#include "player.h"
-
+/**
+ * @file main.cpp
+ *
+ * @Copyright 2020 Elliott Krohnke, All rights reserved.
+ */
 #include <iostream>
+
+#include "blackjack/deck.h"
+#include "blackjack/card_struct.h"
+#include "blackjack/dealer.h"
+#include "blackjack/player.h"
 
 class Deck;
 
@@ -34,7 +39,7 @@ int main(int argc, char**argv) {
     int result = 0;
     int hit = 1;
     // This loop allows the player to choose how many hits they want.
-    while(hit){
+    while (hit) {
       std::cout<< "Type 1 for hit or 0 for hold" << std::endl;
       std::cin>> hit;
       std::cout<< std::endl << std::endl;
@@ -44,7 +49,7 @@ int main(int argc, char**argv) {
       result = PlayerVector[1]->Hit(game_deck.Hit());
       PlayerVector[1]->Print();
       // break the loop if player busted.
-      if (result == 1){
+      if (result == 1) {
         hit = 0;
       }
     }
@@ -56,7 +61,7 @@ int main(int argc, char**argv) {
     if (result != 1 && score < 17) {
       std::cout << "Dealer takes more cards"<< std::endl;
       // While the dealer's score is less than 17 and not busted, draws cards.
-      while (score < 17 && score != -1 ) {
+      while (score < 17 && score != -1) {
         PlayerVector[0]->Hit(game_deck.Hit());
         PlayerVector[0]->Print();
         score = PlayerVector[0]->Score();
@@ -66,8 +71,7 @@ int main(int argc, char**argv) {
     }
     if (PlayerVector[1]->Score() > PlayerVector[0]->Score()) {
       std::cout << "You win" << std::endl;
-    }
-    else{
+    } else {
       std::cout << "You lose" << std::endl;
     }
     std::cout<< "Type 1 to play another game" << std::endl;

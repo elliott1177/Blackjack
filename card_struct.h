@@ -1,5 +1,10 @@
-#ifndef CARD_STRUCT_H_
-#define CARD_STRUCT_H_
+/**
+ * @card_struct.h
+ *
+ * @Copyright 2020 Elliott Krohnke, All rights reserved.
+ */
+#ifndef BLACKJACK_CARD_STRUCT_H_
+#define BLACKJACK_CARD_STRUCT_H_
 
 #include <string>
 
@@ -8,4 +13,4 @@ struct Card {
   std::string name;
   int value;
 };
-#endif  // CARD_STRUCT_H_
+#endif  // BLACKJACK_CARD_STRUCT_H_

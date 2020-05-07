@@ -1,4 +1,13 @@
-#include "deck.h"
+/**
+ * @file deck.cc
+ *
+ * @Copyright 2020 Elliott Krohnke, All rights reserved.
+ */
+
+#include <string>
+
+#include "Blackjack/deck.h"
+
 // Class constructor that fills the card_deck vector with 52 card_struct objects
 // representing a Standard 52-Card Deck. It uses two loops to initialize the
 // card deck to contain every card possible in 52 card deck. It iterates through
@@ -11,11 +20,10 @@ Deck::Deck() {
   std::string rank[] = {"Ace", "Two", "Three", "Four", "Five", "Six",
   "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
   for (int su = 0; su < 4; su++) {
-    for (int ra = 0; ra < 13 ; ra++){
-      if (ra>9) {
+    for (int ra = 0; ra < 13 ; ra++) {
+      if (ra > 9) {
         card_deck.push_back(Card((rank[ra] + " of " + suit[su]), 10));
-      }
-      else {
+      } else {
         card_deck.push_back(Card((rank[ra] + " of " + suit[su]), ra + 1));
     }
     }

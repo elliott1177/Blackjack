@@ -1,11 +1,16 @@
-#ifndef DECK_H_
-#define DECK_H_
-
-#include "card_struct.h"
+/**
+ * @file deck.h
+ *
+ * @Copyright 2020 Elliott Krohnke, All rights reserved.
+ */
+#ifndef BLACKJACK_DECK_H_
+#define BLACKJACK_DECK_H_
 
 #include <random>
 #include <vector>
 #include <iostream>
+
+#include "blackjack/card_struct.h"
 
 class Deck {
   std::vector<Card> card_deck;
@@ -13,4 +18,4 @@ class Deck {
   Deck();
   Card Hit();
 };
-#endif  // DECK_H_
+#endif  // BLACKJACK_DECK_H_
