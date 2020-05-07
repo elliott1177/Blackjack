@@ -1,4 +1,4 @@
-# Blackjack
+# :spades: Blackjack
 Play the classic game of Blackjack on the command line. C++ is the dealer.
 
 # To Run:
@@ -7,6 +7,9 @@ Play the classic game of Blackjack on the command line. C++ is the dealer.
 - cd Blackjack
 - g++ main.cpp deck.cc player.cc
 - ./a.out
+
+# Rules:
+
 
 # Notes:
 Basic functionality down. Will add dealer class next.

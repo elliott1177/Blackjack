@@ -8,7 +8,6 @@
 #include <iostream>
 
 class Player {
-  std::vector<Card> hand;
   // score1 tracks the score without any aces, or the low score if you have
   // drawn an ace. score2 is the score with the ace being eleven. score2bust
   // is triggered when the hand is busted with ace being 11. After that only
@@ -19,6 +18,7 @@ class Player {
   // add a variable that tracks if score 2 has been triggered.
   int haveace = 0;
  protected:
+  std::vector<Card> hand;
   // Prints out cards.
   void PrintCards();
   // Prints out the score.

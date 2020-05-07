@@ -62,6 +62,8 @@ void Player::PrintScore() {
   if (haveace && score2bust == 0 ) {
     std::cout << " score is either: " << score1 << " or " << score2 << std::
     endl;
+  } else if (score1 < 0) {
+    std::cout << " busted" << std::endl;
   } else {
     std::cout << " score is: " << score1 << std::endl;
   }
