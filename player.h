@@ -1,11 +1,16 @@
-#ifndef PLAYER_H_
-#define PLAYER_H_
-
-#include "card_struct.h"
+/**
+ * @file player.h
+ *
+ * @Copyright 2020 Elliott Krohnke, All rights reserved.
+ */
+#ifndef BLACKJACK_PLAYER_H_
+#define BLACKJACK_PLAYER_H_
 
 #include <random>
 #include <vector>
 #include <iostream>
+
+#include "Blackjack/card_struct.h"
 
 class Player {
   // score1 tracks the score without any aces, or the low score if you have
@@ -17,6 +22,7 @@ class Player {
   int score2bust = 0;
   // add a variable that tracks if score 2 has been triggered.
   int haveace = 0;
+
  protected:
   std::vector<Card> hand;
   // Prints out cards.
@@ -25,6 +31,7 @@ class Player {
   void PrintScore();
   // updates the scores. returns 1 if busted.
   int Update(Card dealt);
+
  public:
   // Clear the player's variables and cards in the hand. Deal two cards and
   // print. Can be overriden.
@@ -39,4 +46,4 @@ class Player {
   // Virtual so it can be overriden in classes for other types of players.
   virtual void Print();
 };
-#endif  // PLAYER_H_
+#endif  // BLACKJACK_PLAYER_H_
