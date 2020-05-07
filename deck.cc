@@ -16,7 +16,7 @@ Deck::Deck() {
         card_deck.push_back(Card((rank[ra] + " of " + suit[su]), 10));
       }
       else {
-      card_deck.push_back(Card((rank[ra] + " of " + suit[su]), ra + 1));
+        card_deck.push_back(Card((rank[ra] + " of " + suit[su]), ra + 1));
     }
     }
   }

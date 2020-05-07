@@ -28,10 +28,7 @@ int main(int argc, char**argv) {
     for (std::vector<Player *>::iterator it = PlayerVector.begin();
       it != PlayerVector.end(); ++it) {
       // I could merge clear and the double hit and print into a deal method.
-      (*it)->Clear();
-      (*it)->Hit(game_deck.Hit());
-      (*it)->Hit(game_deck.Hit());
-      (*it)->Print();
+      (*it)->Deal(game_deck.Hit(), game_deck.Hit());
     }
     // This int is 1 if the player busts.
     int result = 0;
@@ -40,6 +37,7 @@ int main(int argc, char**argv) {
     while(hit){
       std::cout<< "Type 1 for hit or 0 for hold" << std::endl;
       std::cin>> hit;
+      std::cout<< std::endl << std::endl;
       if (hit == 0) {
         break;
       }
@@ -50,13 +48,21 @@ int main(int argc, char**argv) {
         hit = 0;
       }
     }
-    if (result != 1) {
+    // outputs lines to make game easier to read.
+    std::cout << std::endl << std::endl;
+    // Keep track of the dealers score.
+    int score = PlayerVector[0]->Score();
+    // Dealer takes more cards if player did not bust and their score is < 17.
+    if (result != 1 && score < 17) {
       std::cout << "Dealer takes more cards"<< std::endl;
-      // While the dealer's score is less than 17 they keep getting cards.
-      while (PlayerVector[0]->Score()<17) {
+      // While the dealer's score is less than 17 and not busted, draws cards.
+      while (score < 17 && score != -1 ) {
         PlayerVector[0]->Hit(game_deck.Hit());
+        PlayerVector[0]->Print();
+        score = PlayerVector[0]->Score();
       }
-      PlayerVector[0]->Print();
+    } else {  // If not taking cards print out score.
+        PlayerVector[0]->Print();
     }
     if (PlayerVector[1]->Score() > PlayerVector[0]->Score()) {
       std::cout << "You win" << std::endl;

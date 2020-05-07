@@ -26,6 +26,9 @@ class Player {
   // updates the scores. returns 1 if busted.
   int Update(Card dealt);
  public:
+  // Clear the player's variables and cards in the hand. Deal two cards and
+  // print. Can be overriden.
+  virtual void Deal(Card c_one, Card c_two);
   // Returns score
   int Score();
   // Takes a card in as a parameter and adds it to the hand. returns 1 if busted

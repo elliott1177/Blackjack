@@ -1,15 +1,22 @@
 #include "dealer.h"
 
+// Overriden so only one card is printed out.
+void Dealer::Deal(Card c_one, Card c_two) {
+  Clear();
+  Hit(c_one);
+  Print();
+  Hit(c_two);
+}
+
 // overrides the Parent class print functions because dealer aren't supposed to
 // show all their cards.
 void Dealer::Print() {
-  std::cout<<hand.size()<< "Handsize"<<std::endl;
-  if(hand.size()<=2) {
-    std::cout<< "Dealer's face-up card: "<< hand[1].name << std::endl <<
-    "Value of that card is: " << hand[1].value;
+  if(hand.size()<=1) {
+    std::cout<< "Dealer's face-up card: "<< hand[0].name << std::endl <<
+    "Value of that card is: " << hand[0].value;
     // If card is an ace print out 11 alongside 1.
-    if(hand[1].value == 1){
-      std::cout<< "or "<< 11;
+    if(hand[0].value == 1){
+      std::cout<< " or "<< 11;
     }
     std::cout<< std::endl;
     return;
