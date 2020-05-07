@@ -50,7 +50,7 @@ void Player::Clear() {
 }
 
 int Player::Score() {
-  if (score2 > score1 && score2bust == 0) {
+  if (score2 > score1 && score2bust == 0 && score1 != -1) {
     return score2;
   }
   return score1;
