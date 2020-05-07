@@ -19,12 +19,12 @@ int main(int argc, char**argv) {
     dealer.Clear();
     player1.Clear();
     // Starting hands.
-    std::cout << "Dealers Cards: " << std::endl;
     dealer.Hit(game_deck.Hit());
     dealer.Hit(game_deck.Hit());
-    std::cout << "Your cards: " << std::endl;
+    dealer.Print();
     player1.Hit(game_deck.Hit());
     player1.Hit(game_deck.Hit());
+    player1.Print();
     int hit = 1;
     while(hit){
       std::cout<< "Type 1 for hit or 0 for hold" << std::endl;
@@ -33,6 +33,7 @@ int main(int argc, char**argv) {
         break;
       }
       int result = player1.Hit(game_deck.Hit());
+      player1.Print();
       // break the loop if player busted.
       if (result == 1){
         hit = 0;
@@ -41,13 +42,15 @@ int main(int argc, char**argv) {
     std::cout << "Dealer takes more cards"<< std::endl;
     dealer.Hit(game_deck.Hit());
     dealer.Hit(game_deck.Hit());
+    dealer.Print();
     if (player1.Score() > dealer.Score()) {
       std::cout << "You win" << std::endl;
     }
     else{
       std::cout << "You lose" << std::endl;
     }
-    std::cout<< "Type 1 to play another game"<< std::endl;
+    std::cout<< "Type 1 to play another game" << std::endl;
     std::cin >> playing;
+    std::cout<< std::endl << std::endl << std::endl << std::endl;
   }
 }

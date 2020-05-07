@@ -18,14 +18,22 @@ class Player {
   int score2bust = 0;
   // add a variable that tracks if score 2 has been triggered.
   int haveace = 0;
+ protected:
+  // Prints out cards.
+  void PrintCards();
+  // Prints out the score.
+  void PrintScore();
+  // updates the scores. returns 1 if busted.
+  int Update(Card dealt);
  public:
   // Returns score
   int Score();
   // Takes a card in as a parameter and adds it to the hand. returns 1 if busted
   int Hit(Card dealt);
-  // updates the scores. returns 1 if busted.
-  int Update(Card dealt);
   // Resets everything for the next hand.
   void Clear();
+  // Prints out card names and score. Formatted for command line game play.
+  // Virtual so it can be overriden in classes for other types of players.
+  virtual void Print();
 };
 #endif  // PLAYER_H_
